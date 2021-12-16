@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+    <style>
+        .gen {
+        display: block;
+        max-width: 100px;
+        max-height: 100px;
+        }
+      .divs {
+        width: 50px;
+        height: 50px;
+        display: inline-flex;
+        vertical-align: top;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="gen"></div>
+    <button id="button" onclick="createElements()">click me</button>
+
+    <script>
+        let array = ['red', 'blue', 'yellow', 'black'];
+      function createElements() {
+        let elem;
+
+        const dom = document.getElementsByClassName('gen')[0];
+        dom.innerHTML = '';
+        array.unshift(array.pop());
+        for (let j = 0; j < 4; j++) {
+          elem = document.createElement('div');
+        elem.className = "divs";
+          elem.style.backgroundColor = array[j];
+          dom.appendChild(elem);
+        }
+        console.log(array);
+
+      }
+      createElements();
+    </script>
+  </body>
+</html>
