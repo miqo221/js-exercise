@@ -30,7 +30,7 @@
       const dom = document.getElementById('gen');
       dom.innerHTML = '';
       array.unshift(array.pop());
-      for (let j = 0; j < 4; j++) {
+      for (let j = 0; j < array.length; j++) {
         const elem = document.createElement('div');
         elem.className = "divs";
         elem.style.backgroundColor = array[j];
